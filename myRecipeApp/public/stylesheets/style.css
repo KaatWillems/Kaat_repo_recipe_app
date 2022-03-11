@@ -1,0 +1,44 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: rgb(247, 247, 193);
+    padding: 0;
+    margin:50px;
+    box-sizing: border-box;
+    text-align: center;
+    color:rgb(90, 87, 87);
+}
+
+h1 {
+    color: rgb(152, 240, 152)
+}
+
+input {
+    margin-bottom:15px;
+    height: 17px;
+    width: 150px;
+    border:1px solid lightsalmon;
+}
+
+#content {
+    height: 100px;
+}
+
+#submit {
+background-color: lightcoral;
+border: 1px solid;
+color: white;
+border-radius: 30px;
+height: 30px !important ;
+/* padding: 15px 15px !important; */
+
+}
+
+button {
+
+background-color: lightsalmon;
+border: 1px solid;
+color: white;
+border-radius: 30px;
+ height: 30px !important ; 
+ width: 150px;
+}

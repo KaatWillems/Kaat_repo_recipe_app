@@ -1,0 +1,29 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: rgb(247, 247, 193);
+    padding: 0;
+    margin:50px;
+    box-sizing: border-box;
+}
+
+
+input {
+    margin-bottom:15px;
+    height: 15px;
+    width: 150px;
+}
+
+#content {
+    height: 100px;
+}
+
+#submit {
+background-color: lightcoral;
+border: 1px solid;
+color: white;
+border-radius: 30px;
+height: 30px !important ;
+/* padding: 15px 15px !important; */
+
+}
+

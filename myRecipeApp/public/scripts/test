@@ -1,0 +1,41 @@
+const UpdateTitledisplayOneRecipeInTheDOM = (recipe) => {
+    //--- create an new list item element:
+    const newLiElement = document.createElement('div')
+    
+
+    // ----create a new link to put inside the <li>:
+    const newAElement = document.createElement('a')
+    //--- add some atributes to the <a>:
+    //newAElement.dataset.id = task.recipeId
+    //newAElement.href="#"
+    newAElement.dataset.id = recipe.id
+    newAElement.dataset.title = recipe.newtitle
+    newAElement.dataset.content =recipe.content
+    newAElement.dataset.ingredients = recipe.ingredients
+    newAElement.dataset.rating = recipe.rating 
+
+    //newAElement.dataset.completed = task.completed
+    // ----strikethrough text if completed :
+    //newAElement.style.textDecoration = task.completed ? "line-through" : "none"
+
+   
+    // ---create a span that contains a cross, to delete the task:
+    const newSpan = document.createElement('span')
+    newSpan.innerText = " X "
+
+    // ---Write the content of the task inside the <a>
+    //newAElement.innerText = `${order} - ${task.content} - ${task.completed ? "completed" : "to do"}`
+    newAElement.innerHTML = ` ${recipe.newtitle} | ${recipe.content} | ${recipe.ingredients} | ${recipe.rating} |`
+
+   // newAElement.innerHTML = "testtt"
+
+    // put the <a> AND the span in the <li> :
+    newLiElement.appendChild(newAElement)
+    newLiElement.appendChild(newSpan)
+
+    // add everything to the actual list:
+    section.appendChild(newLiElement)
+
+   
+
+}

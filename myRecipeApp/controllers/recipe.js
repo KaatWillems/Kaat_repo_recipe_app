@@ -37,6 +37,7 @@ const readAllRecipe = (req, res) => {
 let db = new sqlite3.Database('db/db.recipe');
 	// let respMsg = {}
 	let allRecipes = []
+    
 
 	db.all(`SELECT * FROM recipe;`, [], (err, rows) => {
 		if (err) {
@@ -54,8 +55,50 @@ let db = new sqlite3.Database('db/db.recipe');
 		// send all the tasks back to the front :
 		//res.send({message: "res message backend function reading"})
         res.send({recipe: allRecipes})
+        console.log({recipe: allRecipes});
         
 	});
+}
+
+// Update a recipe title
+const updateRecipe = (req, res) => {
+   
+	const id = req.params.id
+   
+	const title = req.body.title 
+   console.log(title, "newtitle log");
+
+	// update sqlite3 db :
+	let db = new sqlite3.Database('db/db.recipe');
+	db.run(`UPDATE recipe SET title =? WHERE id =?`, [title, id], function(err) {
+		if (err) {
+			return console.error(err.message);
+		}
+		console.log(`Row(s) updated: ${this.changes}`);
+
+	});
+
+	// close the database connection
+    // db.all(`SELECT * FROM recipe;`, [], (err, rows) => {
+	// 	if (err) {
+	// 		throw err;
+	// 	}
+
+	// 	newRecipes = rows
+
+	// });
+
+	db.close((err) => {
+		if (err) {
+			res.send(err)
+		}
+		// send all the tasks back to the front :
+		//res.send({message: "res message backend function reading"})
+        readAllRecipe(req, res)
+        
+        
+	});
+
 }
 
 const deleteRecipe = (req, res) => {
@@ -80,7 +123,7 @@ console.log("backend delete works");
 			res.send(err)
 		}
 		// send back the whole updated list of tasks:
-        console.log("new recipe list:");
+       
 		readAllRecipe(req, res)
 	});
 
@@ -95,3 +138,4 @@ console.log("backend delete works");
 exports.addToDB = addToDB;
 exports.readAllRecipe = readAllRecipe;
 exports.deleteRecipe = deleteRecipe;
+exports.updateRecipe = updateRecipe;

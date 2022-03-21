@@ -21,19 +21,27 @@ app.get('/',(req, res) => {
 // add inserted recipes to DB
 app.post('/api/addToDB', (req, res) =>{
   // console.log("hello from brain");
-  recipe.addToDB(req, res, req.body)
+  recipe.addToDB(req, res, req.body) // the backend function 
  
 })
 
 // Read all recipe from DB
 app.get('/api/getAllRecipe', (req, res) => {
-	recipe.readAllRecipe(req, res)
-  //console.log("read brain");
+	recipe.readAllRecipe(req, res) // the backend function 
+  console.log(req.body);
 })
+
+// Update a task
+app.put('/api/updateTask/:id', (req, res) => {
+	recipe.updateRecipe(req, res) // the backend function 
+  console.log(req.body.title, "from brain")
+})
+
+
 
 //Delete a recipe
 app.delete('/api/deleteTask/:id', (req, res) => {
-	recipe.deleteRecipe(req, res)
+	recipe.deleteRecipe(req, res) // the backend function 
   console.log(" brain delete works");
 })
 

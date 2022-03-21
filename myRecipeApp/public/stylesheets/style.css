@@ -42,3 +42,18 @@ border-radius: 30px;
  height: 30px !important ; 
  width: 150px;
 }
+
+#update-title {
+    background-color:lightskyblue;
+    width: 120px ;
+}
+
+#header{
+    font-weight: bold;
+    border: 1px solid lightcoral;
+}
+
+#submit-title {
+    background-color:lightskyblue;
+    width: 120px ;
+}

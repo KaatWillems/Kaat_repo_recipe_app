@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,
+  initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="static/stylesheets/style.css">
+  <title>recipe app</title>
+</head>
+<body>
+  <h1>My Recipe App</h1>
+
+  <form>
+    <label for="title">Title</label> <br>
+    <input type="text" name="title" id="title">  <br>
+    <label for="content">Content</label>  <br>
+    <input type="text" name="content" id="content">  <br>
+
+    <label for="ingredients">Ingredients</label>  <br>
+    <input type="text" name="ingredients" id="ingredients">  <br>
+    <label for="rating">Rating</label>  <br>
+    <input type="number" min="1" max="5" name="rating" id="rating"> <br>
+  
+
+  </form>
+  <input type="submit" value="Submit new recipe " id="submit">
+
+  <button id="display">Display all recipes</button>
+
+    <section class="display">
+
+      <table>
+        <tr>
+          <th>Title</th>
+          <th>Content</th>
+          <th>Ingredients</th>
+          <th>Rating</th>
+        </tr>
+        <tr>
+        <td>title</td>
+        <td>content</td>
+        <td>ingredients</td>
+        <td>rating</td>
+        </tr>
+        
+      </table>
+
+      
+    </section>
+
+
+  <script src="static/scripts/recipes.js"></script>
+</body>
+</html>
